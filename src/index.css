@@ -1,0 +1,174 @@
+:root {
+    --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --line-height: 1.5;
+    --font-weight: 400;
+
+    --color-scheme: light dark;
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #242424;
+    --color-text-light: #213547;
+    --color-text-dark: #rgba(255, 255, 255, 0.87);
+
+    --primary-color: #646cff;
+    --primary-hover: #535bf2;
+    --danger-color: #ff4d4f;
+
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    /* Light gray background */
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e5e7eb;
+    }
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+input {
+    padding: 0.8em 1.2em;
+    border-radius: var(--radius);
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+/* App Specific Styles */
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color-bg-light);
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin: 0 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .app-container {
+        background-color: #2d2d2d;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, var(--primary-color), #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.add-btn {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+    .todo-item {
+        background-color: #333;
+        border-color: #404040;
+    }
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: #ef4444;
+    padding: 8px;
+    opacity: 0.8;
+}
+
+.delete-btn:hover {
+    background-color: #fee2e2;
+    opacity: 1;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6b7280;
+    margin-top: 2rem;
+    font-style: italic;
+}
